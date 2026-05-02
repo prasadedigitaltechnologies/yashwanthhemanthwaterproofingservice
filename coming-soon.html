@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon | Yashwanth Hemanth Waterproofing Service</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0a1628;
+    --deep: #071020;
+    --blue: #1a4fd6;
+    --sky: #3a8cff;
+    --cyan: #00d4ff;
+    --white: #f0f6ff;
+    --muted: #8faac8;
+    --gold: #f5a623;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--deep);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* animated water background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(26,79,214,0.22) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(0,212,255,0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 100% 80% at 50% 110%, rgba(26,79,214,0.35) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* grid lines */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(58,140,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(58,140,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  /* drop badge */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.25);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    margin-bottom: 36px;
+    animation: fadeDown 0.7s ease both;
+  }
+
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    animation: pulse 1.8s ease infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  /* logo line */
+  .brand {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+    animation: fadeDown 0.7s 0.1s ease both;
+  }
+
+  /* main headline */
+  .headline {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 14vw, 160px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    background: linear-gradient(135deg, var(--white) 0%, var(--sky) 50%, var(--cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 12px;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .location-line {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 8vw, 80px);
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    margin-bottom: 40px;
+    animation: fadeUp 0.8s 0.3s ease both;
+    position: relative;
+    display: inline-block;
+  }
+
+  .location-line::before,
+  .location-line::after {
+    content: '—';
+    color: rgba(245,166,35,0.35);
+    font-size: 0.5em;
+    vertical-align: middle;
+    margin: 0 14px;
+  }
+
+  /* sub text */
+  .sub {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--muted);
+    max-width: 480px;
+    margin-bottom: 60px;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .sub strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  /* stats row */
+  .stats {
+    display: flex;
+    gap: 0;
+    margin-bottom: 64px;
+    animation: fadeUp 0.8s 0.5s ease both;
+    border: 1px solid rgba(58,140,255,0.15);
+    border-radius: 16px;
+    overflow: hidden;
+    background: rgba(10,22,40,0.6);
+    backdrop-filter: blur(12px);
+  }
+
+  .stat {
+    padding: 24px 36px;
+    border-right: 1px solid rgba(58,140,255,0.12);
+    flex: 1;
+    min-width: 110px;
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--cyan);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* water drop divider */
+  .divider {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, var(--sky), transparent);
+    margin: 0 auto 48px;
+    animation: fadeIn 1s 0.6s ease both;
+  }
+
+  /* notify section */
+  .notify-label {
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+    animation: fadeUp 0.8s 0.65s ease both;
+  }
+
+  .cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+    margin-bottom: 64px;
+    animation: fadeUp 0.8s 0.7s ease both;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.18s, box-shadow 0.18s;
+    border: none;
+  }
+
+  .btn:hover { transform: translateY(-2px); }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #25d366, #128c50);
+    color: #fff;
+    box-shadow: 0 8px 28px rgba(37,211,102,0.3);
+  }
+
+  .btn-primary:hover { box-shadow: 0 12px 36px rgba(37,211,102,0.45); }
+
+  .btn-secondary {
+    background: rgba(26,79,214,0.2);
+    color: var(--sky);
+    border: 1px solid rgba(58,140,255,0.35);
+    box-shadow: 0 4px 16px rgba(26,79,214,0.15);
+  }
+
+  .btn-secondary:hover { box-shadow: 0 8px 24px rgba(26,79,214,0.3); }
+
+  /* services pills */
+  .services-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 56px;
+    max-width: 600px;
+    animation: fadeUp 0.8s 0.8s ease both;
+  }
+
+  .pill {
+    padding: 7px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(58,140,255,0.2);
+    font-size: 12px;
+    color: var(--muted);
+    background: rgba(10,22,40,0.5);
+    letter-spacing: 0.03em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .pill:hover { border-color: var(--cyan); color: var(--cyan); }
+
+  /* water wave */
+  .wave-wrap {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+  }
+
+  .wave svg {
+    width: 100%; height: 100%;
+  }
+
+  .wave-1 { animation: waveMove 8s linear infinite; opacity: 0.4; }
+  .wave-2 { animation: waveMove 12s linear infinite reverse; opacity: 0.2; bottom: -10px; }
+
+  @keyframes waveMove {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  /* footer note */
+  .footer-note {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    font-size: 12px;
+    color: rgba(143,170,200,0.45);
+    letter-spacing: 0.05em;
+    padding-bottom: 20px;
+    animation: fadeIn 1s 1s ease both;
+  }
+
+  /* animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* drops floating */
+  .drops {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .drop {
+    position: absolute;
+    width: 4px;
+    height: 10px;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    background: rgba(0,212,255,0.18);
+    animation: drip linear infinite;
+  }
+
+  @keyframes drip {
+    0% { transform: translateY(-20px); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 0.3; }
+    100% { transform: translateY(100vh); opacity: 0; }
+  }
+
+  @media (max-width: 520px) {
+    .stats { flex-direction: column; }
+    .stat { border-right: none; border-bottom: 1px solid rgba(58,140,255,0.12); }
+    .stat:last-child { border-bottom: none; }
+    .location-line::before, .location-line::after { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- floating drops -->
+<div class="drops" id="drops"></div>
+
+<!-- wave at bottom -->
+<div class="wave-wrap">
+  <div class="wave wave-1">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C240,100 480,20 720,60 C960,100 1200,20 1440,60 L1440,120 L0,120 Z" fill="rgba(26,79,214,0.15)"/>
+    </svg>
+  </div>
+  <div class="wave wave-2">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,40 C300,90 600,10 900,50 C1100,80 1300,30 1440,50 L1440,120 L0,120 Z" fill="rgba(0,212,255,0.1)"/>
+    </svg>
+  </div>
+</div>
+
+<div class="page">
+
+  <div class="badge">
+    <span class="badge-dot"></span>
+    New Location Launching Soon
+  </div>
+
+  <div class="brand">Yashwanth Hemanth Waterproofing Service</div>
+
+  <div class="headline">COMING<br>SOON</div>
+
+  <!-- <div class="location-line">Vijayawada</div> -->
+
+  <p class="sub">
+    Andhra Pradesh's most trusted waterproofing specialists are expanding.<br>
+    <strong>Expert leak protection</strong> is arriving in Vijayawada — with the same
+    5★ service, 10-year guarantee, and rapid response that Vijayawada trusts.
+  </p>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">25+</div>
+      <div class="stat-label">Years Active</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">1600+</div>
+      <div class="stat-label">Happy Clients</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">5.0★</div>
+      <div class="stat-label">Google Rating</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">10 Yr</div>
+      <div class="stat-label">Guarantee</div>
+    </div>
+  </div>
+
+  <div class="notify-label">Get notified or reach us now</div>
+
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://wa.me/919603114112?text=Hi%2C%20I%20am%20from%20Kavali%20and%20interested%20in%20your%20waterproofing%20services." target="_blank">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.09.538 4.054 1.476 5.766L0 24l6.405-1.46A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.84 9.84 0 01-5.032-1.378l-.36-.214-3.735.852.868-3.645-.235-.374A9.858 9.858 0 012.118 12C2.118 6.533 6.533 2.118 12 2.118S21.882 6.533 21.882 12 17.467 21.882 12 21.882z"/></svg>
+      WhatsApp Us
+    </a>
+    <a class="btn btn-secondary" href="tel:+919603114112">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.66A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.15a16 16 0 006.94 6.94l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +91 96031 14112
+    </a>
+  </div>
+
+  <p class="notify-label" style="margin-bottom:14px;">Services coming to Kavali</p>
+
+  <div class="services-row">
+    <span class="pill">🏠 Roof Waterproofing</span>
+    <span class="pill">🏗 Terrace Sealing</span>
+    <span class="pill">🚿 Bathroom Leakage</span>
+    <span class="pill">🍳 Kitchen Waterproofing</span>
+    <span class="pill">🪟 Wall Dampness</span>
+    <span class="pill">🏊 Water Tank</span>
+    <span class="pill">🏠 Basement Protection</span>
+    <span class="pill">🌿 Balcony Seepage</span>
+    <span class="pill">🪞 Cupboard Seepage</span>
+    <span class="pill">🔧 Crack Filling</span>
+  </div>
+
+</div>
+
+<div class="footer-note">© 2026 Yashwanth Hemanth Waterproofing Service · Vijayawada, Andhra Pradesh</div>
+
+<script>
+  // generate floating water drops
+  const container = document.getElementById('drops');
+  for (let i = 0; i < 18; i++) {
+    const d = document.createElement('div');
+    d.className = 'drop';
+    d.style.left = Math.random() * 100 + 'vw';
+    d.style.animationDuration = (4 + Math.random() * 8) + 's';
+    d.style.animationDelay = (Math.random() * 8) + 's';
+    d.style.opacity = 0.1 + Math.random() * 0.25;
+    d.style.width = (2 + Math.random() * 4) + 'px';
+    d.style.height = (6 + Math.random() * 10) + 'px';
+    container.appendChild(d);
+  }
+</script>
+</body>
+</html>
